@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+        div{
+            width:400px;
+            height:400px;
+            padding:80px;
+            margin:auto;
+               margin-top:20px;
+               border-radius:10px;
+               background:lightsalmon
+        }
+        </style>
+</head>
+  <center/>
+  <div id="">
+<h3>Booking</h3>
+<form>
+<label>Journey Date</label>
+<input type="date"name="journeydate"min="2019-11-10" max="2022-11-24"/><br/>
+<br/>
+<label>Timings</label>
+<input type="time" name="journeytime"><br/>
+<br/>
+<label>Offer%</label>
+<input type="number" name="gst" value="50"readonly><br/>
+<br/>
+<input type="checkbox" name="seniorcitizen"value="Y" onchange=priority()>Senior citizen
+<br/>
+<label>Gender</label>
+<input type="radio" name="gender" value="M">Male
+<input type="radio" name="gender" value="F">Female<br/>
+<br/>
+
+  <h4>Instructions<h4/>
+    
+      <li>Must wear Mask</li>
+      <li>Should not eat in the cab</li>
+      <br/><br/>
+    
+<button type="submit" onclick="login()">submit</button>
+</h4>
+</div>
+</form>
+<script>
+    function priority()
+    {
+        alert("you are a Senior citizen");
+
+    }
+    function login()
+    {
+        alert("your booking is successful");
+    }
+</script>
+</body>
+</html>

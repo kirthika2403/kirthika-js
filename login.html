@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cab-App</title>
+<style>
+div{
+    width:400px;
+    height:400px;
+    padding:80px;
+    margin:auto;
+       margin-top:20px;
+       border-radius:10px;
+       background:lightsalmon
+}
+</style>
+</head>
+<center/>
+<div id="">
+<h1>Login Page</h1>
+<br />
+<form action onsubmit="login()">
+   
+
+
+	    <input type="number" name="number" id="number"
+        placeholder="Enter user mobilenumber"required autofocus><br /> <br /> 
+        <input type="password" name="password" id="password"
+        placeholder="Enter password"required autofocus><br /> <br />
+        <button type="submit" >submit</button>
+        <button type="reset">Clear</button>
+
+</div>
+</form>
+<script>
+    function login(){
+        event.preventDefault();
+        alert("Submit button is clicked");
+        let number=document.querySelector("#number").value;//#name should be same that of id name
+        let word=document.querySelector("#password").value;
+        alert("mobile number: "+number);
+        if(number.length==10 && word=="admin")
+        {
+            alert("Mobile number and password is valid");
+            window.location.href="cabtype.html";
+
+        }
+        else{
+            alert("Mobile number and password is invalid");
+        }
+    }
+</script>
+</body>
+</html>

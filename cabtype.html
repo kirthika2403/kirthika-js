@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+    div{
+    width:400px;
+    height:400px;
+    padding:80px;
+    margin:auto;
+       margin-top:20px;
+       border-radius:10px;
+       background:lightsalmon
+}
+</style>
+</head>
+<body>
+    <center/>
+<form action onsubmit="login()">
+    <div id="">
+<h1>CarTypes</h1>
+<table border="1">
+<thead>
+<tr><th>Type</th><th>Price per km</th></tr>
+</thead>
+<tbody>
+<tr><td>Micro</td><td>Rs 10 per km</td></tr>
+<tr><td>Mini</td><td>Rs 15 per km</td></tr>
+<tr><td>Prime</td><td>Rs 20 per km</td></tr>
+</tbody>
+</table> 
+<br/>  
+<label>Select Cab Type:</label>
+<select name="Cab type" id="cabtype"required onchange="display()" required>
+<option>----Select Cab type----</option>
+<option value="Micro">Micro</option>
+<option value="Mini">Mini</option>
+<option value="Prime">Prime</option>
+
+</select>
+
+<br/><br/>
+<label>Enter kms:</label>
+<input type="number" id="km" placeholder="Enter kms"required>
+<br/><br/>
+<label>GST</label>
+<input type="number" value="7" readonly></label>
+<br/><br/>
+<label for="display" id="bill"></label><br/><br/>
+<label for="gst" id="gst"></label>
+<br/>
+<br/>
+<button type="button" onclick="calc()">bill</button>
+<button type="button" onclick="nextpage()">nextpage</button>
+</div>
+</form>
+<script>
+    function display()
+    {
+        alert("Car type is pressed");
+    }
+    function calc()
+    {   let total=0;
+        let cab=document.querySelector("#cabtype").value;
+        let kilo=document.querySelector("#km").value;
+    
+        if(cab=="Micro")
+        {
+            total=10*kilo;
+            bill(total)
+
+        }
+        if(cab=="Mini")
+        {
+            total=15*kilo;
+            bill(total)
+        }
+        if(cab=="Prime")
+        {
+            total=20*kilo;
+            bill(total)
+        }
+    }
+
+    function bill(total){
+        document.getElementById('bill').innerHTML="The bill is "+total;
+        let totalamt=0.07*total
+        document.getElementById('gst').innerHTML="The GST is "+totalamt;
+    
+    }
+    function nextpage()
+    {
+        window.location.href="senior.html";
+    }
+</script>
+
+</body>
+</html>
